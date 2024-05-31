@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Last few days at NTPC</title>
+</head>
+
+<body onload="countDown()">
+    <!--Header-->
+    <div class="header">
+        <h1>hello,</h1>
+        <p>i have decided to move on from NTPC, where i spent the last 13 years</p>
+        <p>i would be leaving in</p>
+    </div>
+
+    <!--Counter-->
+    <div class="counter">
+        <div class="days">
+            <div class="number" id="days"></div>
+            <div class="description">Days</div>
+        </div>
+        <div class="hours">
+            <div class="number" id="hours"></div>
+            <div class="description">Hours</div>
+        </div>
+        <div class="minutes">
+            <div class="number" id="minutes"></div>
+            <div class="description">Mins</div>
+        </div>
+        <div class="seconds">
+            <div class="number" id="seconds"></div>
+            <div class="description">Secs</div>
+        </div>
+    </div>
+
+    <!--Countact-->
+    <div class="contact">
+        <p>please connect with me on my <a href="https://www.linkedin.com/in/subinabid/">linkedin</a></p>
+        <p>you could read my <a href="https://blog.sabid.in/">blogs</a> or follow me on <a
+                href="https://www.instagram.com/5.hydroxy.tryptamine/">insta</a></p>
+    </div>
+
+</body>
+
+<script>
+    function countDown() {
+        const end = new Date(2024, 6, 9, 17, 30, 0, 0)
+        const now = new Date()
+
+        if (end < now) {
+            alert("Countdown is closed")
+
+        } else {
+            delta = (end - now) / 1000
+            days = Math.floor(delta / 86400)
+            delta = delta % 86400
+            document.getElementById("days").innerHTML = days
+            hours = Math.floor(delta / 3600)
+            delta = delta % 3600
+            document.getElementById("hours").innerHTML = hours
+            minutes = Math.floor(delta / 60)
+            seconds = Math.floor(delta % 60)
+            document.getElementById("minutes").innerHTML = minutes
+            document.getElementById("seconds").innerHTML = seconds
+        }
+        setTimeout(countDown, 1000)
+    }
+</script>
+
+</html>
